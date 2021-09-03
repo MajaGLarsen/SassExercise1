@@ -1,0 +1,154 @@
+/*Variabler*/
+/*Fonts and sizes*/
+/*Colours*/
+/*Basic values*/
+/*Mixins*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif; }
+
+/*HeroSection*/
+.heroSection {
+  background-image: url(./images/scifi3.jpg);
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  height: 90vh; }
+  .heroSection .scienceFiction {
+    font-size: 90px;
+    position: relative;
+    top: 33vh;
+    color: #b3b3b3;
+    font-family: "STARWARS", "Orbitron SemiBold", "Helvetica", "sans serif"; }
+
+/*Navigationsbar*/
+.navbarContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  position: absolute; }
+  .navbarContainer img {
+    width: 100%;
+    margin: 15px 0; }
+  .navbarContainer figure, .navbarContainer p {
+    width: 19%;
+    padding: 0 20px 40px 0; }
+  .navbarContainer h1 {
+    color: #f1cf0e;
+    padding-left: 20px;
+    flex: 1;
+    font-family: "STARWARS", "Orbitron SemiBold", "Helvetica", "sans serif"; }
+  .navbarContainer ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    list-style: none; }
+    .navbarContainer ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 20px; }
+      .navbarContainer ul li a.middle {
+        position: relative; }
+      .navbarContainer ul li a.middle:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #f1cf0e;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out; }
+      .navbarContainer ul li a.middle:hover:before {
+        visibility: visible;
+        transform: scaleX(1); }
+      .navbarContainer ul li a:hover {
+        color: #f1cf0e; }
+
+/*section, science fiction intro*/
+section {
+  display: flex;
+  justify-content: center; }
+  section img {
+    width: 100%;
+    margin: 15px 0; }
+  section figure, section .navbarContainer p, .navbarContainer section p, section p, section .flexContainer p, .flexContainer section p {
+    width: 19%;
+    padding: 0 20px 40px 0; }
+
+/*Top 3 science fiction movies*/
+.grayBackground {
+  background-color: #e0e0e0;
+  padding: 25px 0; }
+
+h3 {
+  text-align: center;
+  font-size: 29px;
+  margin: 25px 0; }
+
+.flexContainer {
+  display: flex;
+  justify-content: center; }
+  .flexContainer img {
+    width: 100%;
+    margin: 15px 0; }
+  .flexContainer figure, .flexContainer p {
+    width: 19%;
+    padding: 0 20px 40px 0; }
+  .flexContainer figure, .flexContainer p {
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+
+/*Footer section*/
+.footer {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(./images/scifi3.jpg);
+  background-size: cover;
+  color: #fff;
+  text-align: center; }
+  .footer .scienceFiction {
+    font-size: 90px;
+    position: relative;
+    top: 33vh;
+    color: #b3b3b3;
+    font-family: "STARWARS", "Orbitron SemiBold", "Helvetica", "sans serif"; }
+  .footer p {
+    margin: 0 0 35px 0; }
+  .footer ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 65%;
+    list-style: none; }
+    .footer ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 20px; }
+      .footer ul li a.middle {
+        position: relative; }
+      .footer ul li a.middle:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #f1cf0e;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out; }
+      .footer ul li a.middle:hover:before {
+        visibility: visible;
+        transform: scaleX(1); }
+      .footer ul li a:hover {
+        color: #f1cf0e; }
+
+/*# sourceMappingURL=styles.css.map */

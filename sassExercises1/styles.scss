@@ -1,0 +1,178 @@
+/*Variabler*/
+/*Fonts and sizes*/
+$myheader: 22px;
+$fontsize: 20px;
+$textPadding: 25px 0;
+$null: 0;
+$screenHeight: 100vh;
+$screenWidth: 100%;
+$specialFont: "STARWARS", "Orbitron SemiBold", "Helvetica", "sans serif";
+$flexSize: 1;
+$navFooterHeight: 100px;
+
+/*Colours*/
+$yellowText: #f1cf0e;
+$whiteText: #fff;
+$lightGray: #e0e0e0;
+
+/*Basic values*/
+$centering: center;
+$flexDisplay: flex;
+$displayAbsolute: absolute;
+$displayRelative: relative;
+$displayNone: none;
+
+/*Mixins*/
+@mixin links {
+    text-decoration: $displayNone;
+    color: $whiteText;
+    font-size: $fontsize;
+        &.middle{
+            position: $displayRelative;
+        }
+
+        &.middle:before {
+            content: "";
+            position: $displayAbsolute;
+            width: $screenWidth;
+            height: 2px;
+            bottom: $null;
+            left: $null;
+            background-color: $yellowText;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        &.middle:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+        
+        &:hover {
+            color: $yellowText;
+        }
+}
+
+@mixin flexContainerColumn {
+    display: $flexDisplay;
+    align-items: $centering;
+    flex-direction: column;
+}
+
+@mixin flexContainerRow {
+    display: $flexDisplay;
+    justify-content: $centering;
+    img {
+        width: $screenWidth;
+        margin: 15px 0;
+    }
+    figure {
+        width: $screenWidth - 81%;
+        padding: 0 20px 40px 0;
+    }
+    p {
+        @extend figure;
+    }
+}
+
+@mixin spaceEvenly {
+    display: $flexDisplay;
+    justify-content: space-evenly;
+}
+
+@mixin backgroundImage {
+    background-image: url(./images/scifi3.jpg);
+    background-size: cover;
+    color: $whiteText;
+    text-align: $centering;
+    .scienceFiction {
+        font-size: $fontsize + 70px;
+        position: $displayRelative;
+        top: $screenHeight - 67vh;
+        color: darken($whiteText, 30%);
+        font-family: $specialFont;
+    }
+}
+
+* {
+    padding: $null;
+    margin: $null;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/*HeroSection*/
+.heroSection {
+    @include backgroundImage;
+    height: $screenHeight - 10vh;
+}
+
+/*Navigationsbar*/
+.navbarContainer {
+    @include flexContainerRow();
+    width: $screenWidth;
+    height: $navFooterHeight;
+    align-items: $centering;
+    position: $displayAbsolute;
+    h1 {
+        color: $yellowText;
+        padding-left: 20px;
+        flex: $flexSize;
+        font-family: $specialFont;
+    }
+    ul {
+        @include spaceEvenly();
+        flex: $flexSize;
+        list-style: $displayNone;
+        li {
+            a {
+                @include links();
+            }
+        }
+    }
+}
+
+/*section, science fiction intro*/
+section {
+    @include flexContainerRow();
+}
+
+/*Top 3 science fiction movies*/
+.grayBackground {
+    background-color: $lightGray;
+    padding: $textPadding;
+}
+
+h3 {
+    text-align: $centering;
+    font-size: $myheader + 7px;
+    margin: $textPadding;
+}
+
+.flexContainer {
+    @include flexContainerRow();
+    figure {
+        @include flexContainerColumn();
+    }
+}
+
+/*Footer section*/
+.footer {
+    height: $navFooterHeight + $navFooterHeight;
+    @include flexContainerColumn();
+    justify-content: $centering;
+    @include backgroundImage;
+    p {
+        margin: 0 0 35px 0;
+    }
+    ul {
+        @include spaceEvenly();
+        width: $screenWidth - 35%;
+        list-style: $displayNone;
+        li {
+            a {
+                @include links();
+            }
+        }
+    }
+}
